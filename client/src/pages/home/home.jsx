@@ -6,7 +6,7 @@ const Home = () => {
   const reg = (inputText) => {
     const lines = inputText.split('\n')
     const data = lines.map((line) => {
-      const match = line.match(/от (\d{1,2}\.\d{1,2}\.\d{4}).*?(\d{1,2}\s\d+,\d+)/)
+      const match = line.match(/от (\d{1,2}\.\d{1,2}\.\d{4}).*?(\d*\s?\d+,\d+)/)
       if (match && match.length >= 3) {
         const [, date, amount] = match
         return { date, amount }
